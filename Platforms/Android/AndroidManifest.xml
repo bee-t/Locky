@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.locky.touchguard">
+
+	<uses-sdk android:minSdkVersion="24" android:targetSdkVersion="36" />
+
+	<!-- Required to float the small lock/unlock button and touch shield over video call apps -->
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+	<!-- Required on Android 9+ to keep the floating button alive when switching to WhatsApp/Meet/Zoom -->
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+	<!-- Subtle tactile confirmation when locking/unlocking -->
+	<uses-permission android:name="android.permission.VIBRATE" />
+
+	<!-- Optional: keep screen awake while video call touch shield is locked -->
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+
+	<!-- 100% offline: intentionally NO android.permission.INTERNET -->
+
+	<application
+		android:allowBackup="false"
+		android:icon="@mipmap/appicon"
+		android:roundIcon="@mipmap/appicon_round"
+		android:supportsRtl="true"
+		android:label="Locky"
+		android:hardwareAccelerated="true">
+
+		<service
+			android:name="com.locky.touchguard.LockyForegroundService"
+			android:exported="false"
+			android:foregroundServiceType="specialUse">
+			<property
+				android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+				android:value="Floating screen-touch lock button over video calls for parents" />
+		</service>
+
+	</application>
+
+</manifest>

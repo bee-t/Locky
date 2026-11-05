@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_service_description">Locky uses this optional shield to block accidental toddler screen taps, notification pull-downs, and back/home swipes while locked during family video calls. Locky operates 100% offline and never reads or collects any screen content.</string>
+</resources>

@@ -6,12 +6,14 @@ public static class LockySettings
 {
     public static event Action? Changed;
 
+    private const string SizePreferenceKey = "IndicatorSizeDp_v2";
+
     public static int ButtonSizeDp
     {
-        get => Preferences.Default.Get(nameof(ButtonSizeDp), 40);
+        get => Preferences.Default.Get(SizePreferenceKey, 24);
         set
         {
-            Preferences.Default.Set(nameof(ButtonSizeDp), Math.Clamp(value, 30, 64));
+            Preferences.Default.Set(SizePreferenceKey, Math.Clamp(value, 14, 48));
             Changed?.Invoke();
         }
     }

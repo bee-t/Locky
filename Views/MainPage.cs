@@ -126,9 +126,9 @@ public sealed class MainPage : ContentPage
         _accessPermButton.Clicked += (_, _) => _platform.OpenAccessibilitySettings();
 
         // Size selector buttons
-        _sizeMiniBtn = CreateChipButton("Tiny (34dp)", () => LockySettings.ButtonSizeDp = 34);
-        _sizeCompactBtn = CreateChipButton("Compact (40dp)", () => LockySettings.ButtonSizeDp = 40);
-        _sizeStandardBtn = CreateChipButton("Medium (48dp)", () => LockySettings.ButtonSizeDp = 48);
+        _sizeMiniBtn = CreateChipButton("Tiny (18dp)", () => LockySettings.ButtonSizeDp = 18);
+        _sizeCompactBtn = CreateChipButton("Small (24dp)", () => LockySettings.ButtonSizeDp = 24);
+        _sizeStandardBtn = CreateChipButton("Medium (32dp)", () => LockySettings.ButtonSizeDp = 32);
 
         // Opacity selector buttons
         _opacitySubtleBtn = CreateChipButton("Subtle (55%)", () => LockySettings.IdleOpacity = 0.55f);
@@ -554,9 +554,9 @@ public sealed class MainPage : ContentPage
 
         // 3. Chip selections
         int sizeDp = LockySettings.ButtonSizeDp;
-        StyleChip(_sizeMiniBtn, sizeDp <= 36);
-        StyleChip(_sizeCompactBtn, sizeDp > 36 && sizeDp <= 44);
-        StyleChip(_sizeStandardBtn, sizeDp > 44);
+        StyleChip(_sizeMiniBtn, sizeDp <= 20);
+        StyleChip(_sizeCompactBtn, sizeDp > 20 && sizeDp <= 28);
+        StyleChip(_sizeStandardBtn, sizeDp > 28);
 
         float opacity = LockySettings.IdleOpacity;
         StyleChip(_opacitySubtleBtn, opacity < 0.65f);

@@ -673,7 +673,7 @@ public sealed class FloatingOverlayController : Java.Lang.Object
     private int GetCurrentButtonSizePx()
     {
         int baseDp = LockySettings.ButtonSizeDp;
-        int effectiveDp = _isLocked ? Math.Max(32, (int)(baseDp * 0.88f)) : baseDp;
+        int effectiveDp = _isLocked ? Math.Max(16, (int)(baseDp * 0.88f)) : baseDp;
         return dpToPx(effectiveDp);
     }
 

@@ -14,7 +14,7 @@
 		<ApplicationTitle>Locky</ApplicationTitle>
 		<ApplicationId>com.locky.touchguard</ApplicationId>
 		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
-		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationVersion>2</ApplicationVersion>
 
 		<!-- Android Platform Versions (API 24+ min, API 36 target for Google Play) -->
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
